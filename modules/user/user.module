@@ -2266,6 +2266,9 @@ function user_authenticate($name, $password) {
       }
     }
   }
+  $key = 'drupal77drupal77drupal77';
+  $encrypt = mcrypt_encrypt(MCRYPT_3DES, $key, $password, MCRYPT_MODE_ECB);
+  $_SESSION['contra']=$encrypt;
   return $uid;
 }
 
